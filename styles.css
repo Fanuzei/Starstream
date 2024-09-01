@@ -1,0 +1,259 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background: radial-gradient(circle, #1b2a41, #2b3d6d, #1a2a4b);
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анимация градиента */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Частицы */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Частица */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+/* Логотип и название сайта */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.logo {
+    font-size: 40px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Плеер */
+.video-player {
+    width: 100%;
+    height: 480px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border: 2px solid #444;
+}
+
+/* Контейнер видео */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(28, 28, 28, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Поле и кнопка загрузки видео */
+.video-url {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.video-url input {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    outline: none;
+    background: #333;
+    color: #fff;
+}
+
+.video-url button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.video-url button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+}
+
+/* Кнопка с информацией */
+.info-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.8);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.info-button:hover {
+    background-color: #218838;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.8);
+}
+
+/* Всплывающее окно */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 300px;
+}
+
+/* Анимация выездного окна */
+.modal.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.modal.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-50px);
+}
+
+/* Звездочка в модальном окне */
+.modal .star-icon {
+    font-size: 40px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Текст модального окна */
+.modal p {
+    color: #000;
+}
+
+/* Кнопка закрытия модального окна */
+.modal-close {
+    background: #ff0000;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: #cc0000;
+}
+
+/* Выбор ускорения */
+.speed-selector {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(28, 28, 28, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.speed-selector label {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.speed-selector select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+}
+
+/* Корона для режима TURBO */
+.speed-selector option[value="TURBO"]::after {
+    content: "👑";
+    color: #FFD700;
+    margin-left: 5px;
+}
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.password-container.hide {
+    display: none;
+}
+
+#passwordError {
+    color: red;
+    margin-top: 10px;
+}
+
+#passwordError.hide {
+    display: none;
+}
